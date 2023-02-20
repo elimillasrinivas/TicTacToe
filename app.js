@@ -31,14 +31,13 @@ function gameStatus(cell){
 }
 
 function checkWinner(spaces){
-        flag=false
-        for(let i=0;i<winningCells.length;i++){
+            flag=false
             let condition=winningCells[i]
             let cellA=spaces[condition[0]]
             let cellB=spaces[condition[1]]
             let cellC = spaces[condition[2]];
-
-             if(cellA == "" || cellB == "" || cellC == ""){
+        for(let i=0;i<winningCells.length;i++){
+            if(cellA == "" || cellB == "" || cellC == ""){
                     continue;
                 }
             if(cellA == cellB && cellB == cellC){
@@ -48,7 +47,7 @@ function checkWinner(spaces){
                 }
         }
         
-        if(!spaces.includes("")) statusTag.innerHTML=`<span>Tied up!</span>`;
+        if(!spaces.includes("") && cellA!=cellB && cellB!==cellC) statusTag.innerHTML=`<span>Tied up!</span>`;
 
 }
 
